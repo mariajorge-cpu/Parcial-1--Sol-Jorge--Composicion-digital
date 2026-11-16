@@ -17,6 +17,46 @@ opcionesEntrega.forEach(function(opcion) {
 
 });
 
+
+// MEDIOS DE PAGO
+
+const opcionesPago = document.querySelectorAll('input[name="metodo-pago"]');
+
+const datosTarjeta = document.getElementById("datos-tarjeta");
+const datosTransferencia = document.getElementById("datos-transferencia");
+
+const camposTarjeta = datosTarjeta.querySelectorAll("input");
+
+opcionesPago.forEach(function(opcion) {
+
+    opcion.addEventListener("change", function() {
+
+        datosTarjeta.style.display = "none";
+        datosTransferencia.style.display = "none";
+
+        camposTarjeta.forEach(function(campo) {
+            campo.required = false;
+        });
+
+        if (opcion.value === "credito" || opcion.value === "debito") {
+
+            datosTarjeta.style.display = "block";
+
+            camposTarjeta.forEach(function(campo) {
+                campo.required = true;
+            });
+
+        } else if (opcion.value === "transferencia") {
+
+            datosTransferencia.style.display = "block";
+
+        }
+
+    });
+
+});
+
+
 // RECUPERAR PRODUCTOS DEL CARRITO
 
 const carritoCompra = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -63,6 +103,7 @@ function mostrarResumen() {
 
 mostrarResumen();
 
+
 // CONFIRMAR PEDIDO
 
 const formulario = document.getElementById("formulario-compra");
@@ -82,6 +123,14 @@ formulario.addEventListener("submit", function(event) {
 
     if (!entregaSeleccionada) {
         alert("Seleccioná una modalidad de entrega.");
+        return;
+    }
+
+    // Obtener medio de pago
+    const pagoSeleccionado = document.querySelector('input[name="metodo-pago"]:checked');
+
+    if (!pagoSeleccionado) {
+        alert("Seleccioná un medio de pago.");
         return;
     }
 
@@ -113,6 +162,8 @@ formulario.addEventListener("submit", function(event) {
             return p.id === item.id;
         });
 
+        if (!producto) return null;
+
         return {
             id: producto.id,
             nombre: producto.nombre,
@@ -131,11 +182,13 @@ formulario.addEventListener("submit", function(event) {
     const pedido = {
         numero: "LJ-" + Date.now().toString().slice(-6),
         fecha: new Date().toLocaleDateString("es-AR"),
+        fechaHora: Date.now(),
         nombre: document.getElementById("nombre").value,
         apellido: document.getElementById("apellido").value,
         email: document.getElementById("email").value,
         telefono: document.getElementById("telefono").value,
         entrega: entregaSeleccionada.value,
+        metodoPago: pagoSeleccionado.value,
         direccion: direccion,
         productos: productosPedido,
         total: total

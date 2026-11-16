@@ -3,6 +3,43 @@ const pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
 
 const listaPedidos = document.getElementById("lista-pedidos");
 
+// CALCULAR ESTADO DEL PEDIDO
+function obtenerEstado(fecha, entrega) {
+
+    if (!fecha) return "Registrado";
+
+    const minutosTranscurridos = (Date.now() - Number(fecha)) / 60000;
+
+    if (minutosTranscurridos < 1) {
+        return "Registrado";
+    }
+
+    if (minutosTranscurridos < 3) {
+        return "En preparación";
+    }
+
+    if (minutosTranscurridos < 5) {
+        return entrega === "domicilio" ? "En camino" : "Listo para retirar";
+    }
+
+    return entrega === "domicilio" ? "Entregado" : "Retirado";
+}
+
+// ACTUALIZAR ESTADOS EN PANTALLA
+function actualizarEstados() {
+
+    const estados = document.querySelectorAll(".pedido-estado");
+
+    estados.forEach(function(estado) {
+
+        const fecha = estado.dataset.fecha;
+        const entrega = estado.dataset.entrega;
+
+        estado.textContent = obtenerEstado(fecha, entrega);
+
+    });
+}
+
 // MOSTRAR PEDIDOS
 function mostrarPedidos() {
 
@@ -53,7 +90,12 @@ function mostrarPedidos() {
                         <h2>Pedido ${pedido.numero}</h2>
                         <p>Fecha: ${pedido.fecha}</p>
                     </div>
-                    <span class="pedido-estado">Registrado</span>
+
+                    <span class="pedido-estado"
+                        data-fecha="${pedido.fechaHora || ""}"
+                        data-entrega="${pedido.entrega}">
+                        Registrado
+                    </span>
                 </div>
 
                 <div class="pedido-productos">
@@ -72,6 +114,11 @@ function mostrarPedidos() {
             </article>
         `;
     });
+
+    actualizarEstados();
 }
 
 mostrarPedidos();
+
+// ACTUALIZAR CADA SEGUNDO
+setInterval(actualizarEstados, 1000);

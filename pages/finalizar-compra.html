@@ -41,7 +41,10 @@
             </nav>
 
         </div>
-
+          <!-- CARRITO FLOTANTE -->
+            <a href="carrito.html" class="carrito-flotante" aria-label="Mi carrito">
+    <img src="../src/iconos/icons8-compra-48.png" alt="">
+</a>
     </header>
 
     <main>
@@ -126,6 +129,101 @@
                     </div>
                 </div>
             </div>
+<div id="datos-retiro" class="datos-retiro">
+
+    <h3>Punto de retiro - Santería de la Basílica</h3>
+
+    <h4>
+        Basílica Nacional Nuestra Señora de Luján
+San Martín 51, Luján, Buenos Aires.
+    </h4>
+
+    
+    <p class="nota-retiro">
+    Los pedidos podrán retirarse en el sector de santería,
+    una vez confirmada su disponibilidad.
+</p>
+
+</div>
+
+<!-- MEDIO DE PAGO -->
+<div class="checkout-pago">
+
+    <h2>Medio de pago</h2>
+
+    <div class="opciones-pago">
+
+        <label class="opcion-pago">
+            <input type="radio" name="metodo-pago" value="credito" required>
+            <span>Tarjeta de crédito</span>
+        </label>
+
+        <label class="opcion-pago">
+            <input type="radio" name="metodo-pago" value="debito">
+            <span>Tarjeta de débito</span>
+        </label>
+
+        <label class="opcion-pago">
+            <input type="radio" name="metodo-pago" value="transferencia">
+            <span>Transferencia bancaria</span>
+        </label>
+
+    </div>
+
+    <!-- DATOS DE TARJETA -->
+    <div id="datos-tarjeta" class="datos-pago">
+
+        <h3>Datos de la tarjeta</h3>
+
+        <div class="checkout-campos">
+
+            <div class="campo">
+                <label for="numero-tarjeta">Número de tarjeta</label>
+                <input type="text" id="numero-tarjeta"
+                       inputmode="numeric" maxlength="19"
+                       placeholder="0000 0000 0000 0000">
+            </div>
+
+            <div class="campo">
+                <label for="titular-tarjeta">Nombre del titular</label>
+                <input type="text" id="titular-tarjeta"
+                       placeholder="Como aparece en la tarjeta">
+            </div>
+
+            <div class="campo">
+                <label for="vencimiento">Vencimiento</label>
+                <input type="text" id="vencimiento"
+                       placeholder="MM/AA" maxlength="5">
+            </div>
+
+            <div class="campo">
+                <label for="codigo-seguridad">Código de seguridad</label>
+                <input type="password" id="codigo-seguridad"
+                       inputmode="numeric" maxlength="4"
+                       placeholder="CVV">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- DATOS DE TRANSFERENCIA -->
+    <div id="datos-transferencia" class="datos-pago">
+
+        <h3>Datos para realizar la transferencia</h3>
+
+        <p><strong>Titular:</strong> Luján te recibe</p>
+        <p><strong>CBU:</strong> 0000000000000000000000</p>
+        <p><strong>Alias:</strong> LUJAN.TE.RECIBE</p>
+
+        <p class="nota-pago">
+            Datos bancarios ficticios para la simulación académica.
+        </p>
+
+    </div>
+
+</div>
+
 
             <!-- RESUMEN DE COMPRA -->
             <div class="checkout-resumen">

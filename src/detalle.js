@@ -70,10 +70,18 @@ botonCarrito.addEventListener("click", function() {
 
     }
 
-    // Guardar carrito actualizado
+// Guardar carrito actualizado
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    alert("¡Producto agregado al carrito!");
+// Actualizar color del carrito flotante
+
+const carritoFlotante = document.querySelector(".carrito-flotante");
+
+if (carritoFlotante) {
+    carritoFlotante.classList.add("activo");
+}
+
+alert("¡Producto agregado al carrito!");
 
 });

@@ -8,6 +8,11 @@ function mostrarCarrito() {
 
     const listaCarrito = document.getElementById("lista-carrito");
     const totalCarrito = document.getElementById("total-carrito");
+    const carritoFlotante = document.querySelector(".carrito-flotante");
+
+if (carritoFlotante) {
+    carritoFlotante.classList.toggle("activo", carrito.length > 0);
+}
 
     listaCarrito.innerHTML = "";
 
