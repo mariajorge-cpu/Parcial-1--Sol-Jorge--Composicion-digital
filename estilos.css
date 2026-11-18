@@ -2255,6 +2255,10 @@ flex-wrap: wrap;
 gap: 15px;
 }
 
+.header {
+    position: static;
+}
+
 
 .logo img {
 width: 55px;

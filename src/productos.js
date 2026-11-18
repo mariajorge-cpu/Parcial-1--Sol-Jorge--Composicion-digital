@@ -5,7 +5,7 @@ const productos = [
         nombre: "Taza de Luján",
         precio: 12000,
         categoria: "recuerdos",
-        imagen: "../src/imagenes/Taza de cerámica con basílica de Luján.png",
+        imagen: "../src/imagenes/Taza de cerámica con basílica de Luján.avif",
         descripcion: "Taza de cerámica con una ilustración de la Basílica de Luján."
     },
 
@@ -14,7 +14,7 @@ const productos = [
         nombre: "Llavero Basílica",
         precio: 7000,
         categoria: "recuerdos",
-        imagen: "../src/imagenes/llavero.jpg",
+        imagen: "../src/imagenes/llavero.avif",
         descripcion: "Un pequeño recuerdo de la Basílica de Luján."
     },
 
@@ -23,7 +23,7 @@ const productos = [
         nombre: "Tote Bag",
         precio: 8000,
         categoria: "recuerdos",
-        imagen: "../src/imagenes/tote.jpg",
+        imagen: "../src/imagenes/tote.avif",
         descripcion: "Bolsa de tela con diseño de Luján."
     },
 
@@ -32,7 +32,7 @@ const productos = [
         nombre: "Postal Virgen de Luján",
         precio: 4000,
         categoria: "religiosos",
-        imagen: "../src/imagenes/postal.png",
+        imagen: "../src/imagenes/postal.avif",
         descripcion: "Una postal ilustrada para recordar tu visita."
     },
 
@@ -41,7 +41,7 @@ const productos = [
         nombre: "Alfajores de la Virgen",
         precio: 13000,
         categoria: "productos-locales",
-        imagen: "../src/imagenes/Alfajores de Luján.png",
+        imagen: "../src/imagenes/Alfajores de Luján.avif",
         descripcion: "Una caja de alfajores para compartir."
     },
 
@@ -50,7 +50,7 @@ const productos = [
         nombre: "Dulce de Leche de la Ciudad",
         precio: 6500,
         categoria: "productos-locales",
-        imagen: "../src/imagenes/Dulce de Leche de Luján.png",
+        imagen: "../src/imagenes/Dulce de Leche de Luján.avif",
         descripcion: "Un clásico dulce de leche para llevarte un pedacito de Luján."
     }
 
