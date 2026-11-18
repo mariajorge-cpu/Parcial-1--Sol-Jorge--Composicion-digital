@@ -98,6 +98,9 @@ margin-bottom: 25px;
 background-color: #F8F9FA;
 width: 100%;
 padding: 15px 0;
+position: sticky;
+top: 0;
+z-index: 1000;
 }
 
 
