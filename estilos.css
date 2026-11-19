@@ -667,7 +667,18 @@ padding: 20px;
 margin-top: 25px;
 box-shadow: 0 3px 0 rgba(0, 0, 0, 0.12);
 }
+.transporte-tarjeta::after {
+    content: "⌄";
+    color: var(--azul-secundario);
+    font-size: 20px;
+    line-height: 10px;
+    margin-left: auto;
+    transition: transform 0.2s ease;
+}
 
+.transporte-item[open] .transporte-tarjeta::after {
+    transform: rotate(180deg);
+}
 
 .transporte-item summary {
 cursor: pointer;
@@ -751,7 +762,18 @@ color: var(--crema);
 background-color: var(--crema);
 min-height: 550px;
 }
+.servicio::after {
+    content: "⌄";
+    color: var(--azul-secundario);
+    font-size: 20px;
+    line-height: 10px;
+    margin-left: auto;
+    transition: transform 0.2s ease;
+}
 
+.servicio-item[open] .servicio::after {
+    transform: rotate(180deg);
+}
 
 .servicio-item {
 margin: 0;
@@ -977,7 +999,18 @@ border-radius: 18px;
 padding: 12px 20px;
 box-shadow: 0 3px 0 rgba(0, 0, 0, 0.12);
 }
-
+.conoce-tarjeta::after {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    background-image: url(src/iconos/icons8-flecha-24.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .conoce-tarjeta img {
 width: 28px;
@@ -1262,6 +1295,9 @@ transition: 0.3s;
 
 /* CATÁLOGO */
 .catalogo {
+    width: auto;
+    margin-left: 16px;
+    margin-right: 16px;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 gap: 35px 25px;
@@ -1283,7 +1319,7 @@ transform: translateY(-5px);
 
 
 .producto img {
-width: 100%;
+width: auto;
 aspect-ratio: 1 / 1;
 object-fit: cover;
 }
@@ -1303,6 +1339,18 @@ color: var(--texto);
 margin: 0 18px 20px;
 }
 
+.producto-info a {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 18px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
 
 /* DETALLE DE PRODUCTO*/
 
@@ -2256,7 +2304,9 @@ gap: 15px;
 }
 
 .header {
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 
@@ -2467,6 +2517,7 @@ padding: 18px;
 }
 
 
+
     /* SERVICIOS */
 
 .servicios {
@@ -2590,7 +2641,9 @@ font-size: 15px;
     /* TIENDA */
 
     .tienda {
-        padding: 45px 0 60px;
+    
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .tienda-intro h1 {

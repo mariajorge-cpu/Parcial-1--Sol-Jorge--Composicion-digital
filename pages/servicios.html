@@ -7,6 +7,7 @@
 
     <title>Servicios | Luján te recibe</title>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../estilos.css">
 
 </head>
@@ -15,39 +16,62 @@
 
 
       <!-- HEADER -->
-       
-    <header class="header">
+<header class="header">
 
-        <div class="contenedor header-contenido">
+    <div class="contenedor header-contenido">
 
-            <a href="../index.html" class="logo">
+        <a href="../index.html" class="logo">
 
-                <img src="../src/iconos/logo lujan.png"
-                     alt="Luján te recibe">
+            <img src="../src/iconos/logo lujan.png"
+                 alt="Luján te recibe">
 
-                <span class="logo-texto">
-                    LUJÁN<br>
-                    TE RECIBE
-                </span>
+            <span class="logo-texto">
+                LUJÁN<br>
+                TE RECIBE
+            </span>
 
-            </a>
+        </a>
 
-            <nav class="navegacion" aria-label="Navegación principal">
+        <!-- BOTÓN MENÚ HAMBURGUESA -->
+        <button class="menu-hamburguesa d-lg-none"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal"
+                aria-expanded="false"
+                aria-label="Abrir menú">
 
-                <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../index.html#agenda">Agenda</a></li>
-                    <li><a href="como-llegar.html">Cómo llegar</a></li>
-                    <li><a href="servicios.html" class="activo" aria-current="page">Servicios</a></li>
-                    <li><a href="conoce-lujan.html">Conocé Luján</a></li>
-                    <li><a href="tienda.html">Tienda</a></li>
-                </ul>
+            <span></span>
+            <span></span>
+            <span></span>
 
-            </nav>
+        </button>
 
-        </div>
+        <!-- NAVEGACIÓN -->
+        <nav class="navegacion collapse d-lg-block"
+             id="menuPrincipal"
+             aria-label="Navegación principal">
 
-    </header>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html#agenda">Agenda</a></li>
+                <li><a href="como-llegar.html">Cómo llegar</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="conoce-lujan.html">Conocé Luján</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- CARRITO FLOTANTE -->
+        <a href="carrito.html" class="carrito-flotante"
+           aria-label="Mi carrito">
+            <img src="../src/iconos/icons8-compra-48.png" alt="">
+        </a>
+
+    </div>
+
+</header>
 
 
     <main>
@@ -385,5 +409,6 @@
 
     </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
